@@ -1,0 +1,207 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+<rect width="900" height="620" fill="#0A0A08"/>
+<defs>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(245,158,11,0.06)" stroke-width="0.5"/>
+  </pattern>
+  <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#F59E0B" opacity="0.7"/></marker>
+  <marker id="arr-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444" opacity="0.8"/></marker>
+  <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#60a5fa" opacity="0.8"/></marker>
+</defs>
+<rect width="900" height="620" fill="url(#grid)"/>
+
+<!-- Title -->
+<text x="450" y="32" text-anchor="middle" fill="#F59E0B" font-size="13" letter-spacing="4" font-weight="500">MINI TANK BT — ELECTRICAL SCHEMATIC v1.0</text>
+<text x="450" y="50" text-anchor="middle" fill="#3D3B34" font-size="9" letter-spacing="2">Arduino Uno · HC-05 · L293D · 7.2V NiMH · 2× DC Motor</text>
+<line x1="60" y1="58" x2="840" y2="58" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
+
+<!-- BATTERY -->
+<g transform="translate(60,80)">
+  <rect width="120" height="72" rx="4" fill="#141410" stroke="#B45309" stroke-width="1"/>
+  <text x="60" y="18" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">BATTERY</text>
+  <text x="60" y="32" text-anchor="middle" fill="#E8E4D9" font-size="11" font-weight="500">NiMH 7.2V</text>
+  <text x="60" y="46" text-anchor="middle" fill="#7A7568" font-size="8">6× AA cells in series</text>
+  <circle cx="25"  cy="62" r="5" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="25"  y="66" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="500">+</text>
+  <circle cx="95" cy="62" r="5" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="95" y="66" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="500">−</text>
+</g>
+
+<!-- HC-05 -->
+<g transform="translate(60,240)">
+  <rect width="130" height="140" rx="4" fill="#0a1628" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="0" y="0" width="130" height="24" rx="4" fill="#1e3a5f" opacity="0.8"/>
+  <text x="65" y="13" text-anchor="middle" fill="#60a5fa" font-size="9" letter-spacing="1">HC-05</text>
+  <text x="65" y="22" text-anchor="middle" fill="#3b82f6" font-size="7">Bluetooth Module</text>
+  <!-- pins left -->
+  <text x="8"  y="50"  fill="#7A7568" font-size="8">VCC</text> <circle cx="4"  cy="47"  r="3" fill="#ef4444" opacity="0.9"/>
+  <text x="8"  y="70"  fill="#7A7568" font-size="8">GND</text> <circle cx="4"  cy="67"  r="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="8"  y="90"  fill="#7A7568" font-size="8">TX</text>  <circle cx="4"  cy="87"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="110" fill="#7A7568" font-size="8">RX</text>  <circle cx="4"  cy="107" r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="65" y="128" text-anchor="middle" fill="#3b82f6" font-size="7">9600 baud · PIN: 1234</text>
+  <!-- antenna symbol -->
+  <line x1="100" y1="30" x2="100" y2="55" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="94"  y1="38" x2="106" y2="38" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="96"  y1="44" x2="104" y2="44" stroke="#3b82f6" stroke-width="1"/>
+  <circle cx="100" cy="58" r="4" fill="none" stroke="#3b82f6" stroke-width="0.8"/>
+</g>
+
+<!-- ARDUINO UNO -->
+<g transform="translate(290,140)">
+  <rect width="200" height="300" rx="4" fill="#0a1628" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="0" y="0" width="200" height="28" rx="4" fill="#1e3a5f" opacity="0.9"/>
+  <text x="100" y="13" text-anchor="middle" fill="#60a5fa" font-size="9" letter-spacing="1">ARDUINO UNO</text>
+  <text x="100" y="24" text-anchor="middle" fill="#3b82f6" font-size="8">ATmega328P · 16MHz</text>
+
+  <!-- Left pins -->
+  <text x="8"  y="55"  fill="#7A7568" font-size="8">D2</text>  <circle cx="3" cy="52"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="73"  fill="#7A7568" font-size="8">D3~</text> <circle cx="3" cy="70"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="91"  fill="#7A7568" font-size="8">D4</text>  <circle cx="3" cy="88"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="109" fill="#7A7568" font-size="8">D5~</text> <circle cx="3" cy="106" r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="127" fill="#7A7568" font-size="8">D6~</text> <circle cx="3" cy="124" r="3" fill="#a78bfa" opacity="0.9"/>
+  <text x="8"  y="145" fill="#7A7568" font-size="8">D9~</text> <circle cx="3" cy="142" r="3" fill="#a78bfa" opacity="0.9"/>
+  <text x="8"  y="163" fill="#7A7568" font-size="8">D10</text> <circle cx="3" cy="160" r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8"  y="181" fill="#7A7568" font-size="8">D11</text> <circle cx="3" cy="178" r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="8"  y="215" fill="#ef4444" font-size="8">5V</text>  <circle cx="3" cy="212" r="3" fill="#ef4444" opacity="0.9"/>
+  <text x="8"  y="233" fill="#60a5fa" font-size="8">GND</text> <circle cx="3" cy="230" r="3" fill="#60a5fa" opacity="0.9"/>
+
+  <!-- USB -->
+  <rect x="75" y="265" width="50" height="22" rx="2" fill="#1e3a5f" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="100" y="280" text-anchor="middle" fill="#3b82f6" font-size="7">USB-B</text>
+
+  <!-- Chip -->
+  <rect x="60" y="130" width="80" height="50" rx="2" fill="#0d1f38" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="100" y="150" text-anchor="middle" fill="#3b82f6" font-size="7">ATmega</text>
+  <text x="100" y="162" text-anchor="middle" fill="#3b82f6" font-size="7">328P</text>
+
+  <!-- SoftwareSerial note -->
+  <text x="100" y="200" text-anchor="middle" fill="#3D3B34" font-size="7">D10=BT_RX · D11=BT_TX</text>
+</g>
+
+<!-- VOLTAGE DIVIDER note -->
+<g transform="translate(190,340)">
+  <rect width="88" height="50" rx="3" fill="#141410" stroke="#fbbf24" stroke-width="0.8"/>
+  <text x="44" y="14" text-anchor="middle" fill="#fbbf24" font-size="8">Voltage Divider</text>
+  <text x="44" y="26" text-anchor="middle" fill="#7A7568" font-size="7">D11 → 1kΩ → RX</text>
+  <text x="44" y="38" text-anchor="middle" fill="#7A7568" font-size="7">junction → 2kΩ → GND</text>
+  <text x="44" y="48" text-anchor="middle" fill="#3D3B34" font-size="6">5V→3.3V for HC-05</text>
+</g>
+
+<!-- L293D -->
+<g transform="translate(590,140)">
+  <rect width="170" height="260" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="85" y="18" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">L293D</text>
+  <text x="85" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">Dual H-Bridge</text>
+
+  <!-- Left inputs from Arduino -->
+  <text x="8"  y="58"  fill="#7A7568" font-size="8">IN1</text>  <circle cx="4" cy="55"  r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8"  y="76"  fill="#7A7568" font-size="8">IN2</text>  <circle cx="4" cy="73"  r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8"  y="94"  fill="#7A7568" font-size="8">EN1</text>  <circle cx="4" cy="91"  r="3" fill="#a78bfa" opacity="0.8"/>
+  <text x="8"  y="122" fill="#7A7568" font-size="8">IN3</text>  <circle cx="4" cy="119" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8"  y="140" fill="#7A7568" font-size="8">IN4</text>  <circle cx="4" cy="137" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8"  y="158" fill="#7A7568" font-size="8">EN2</text>  <circle cx="4" cy="155" r="3" fill="#a78bfa" opacity="0.8"/>
+  <text x="8"  y="196" fill="#ef4444" font-size="8">VS</text>  <circle cx="4" cy="193" r="3" fill="#ef4444" opacity="0.9"/>
+  <text x="8"  y="214" fill="#60a5fa" font-size="8">GND</text>  <circle cx="4" cy="211" r="3" fill="#60a5fa" opacity="0.9"/>
+  <text x="8"  y="232" fill="#22c55e" font-size="8">VSS</text><circle cx="4" cy="229" r="3" fill="#22c55e" opacity="0.9"/>
+
+  <!-- Right outputs to motors -->
+  <text x="138" y="58"  fill="#7A7568" font-size="8" text-anchor="end">OUT1</text> <circle cx="166" cy="55"  r="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="138" y="76"  fill="#7A7568" font-size="8" text-anchor="end">OUT2</text> <circle cx="166" cy="73"  r="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="138" y="122" fill="#7A7568" font-size="8" text-anchor="end">OUT3</text> <circle cx="166" cy="119" r="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="138" y="140" fill="#7A7568" font-size="8" text-anchor="end">OUT4</text> <circle cx="166" cy="137" r="3" fill="#F59E0B" opacity="0.8"/>
+
+  <!-- Heatsink -->
+  <rect x="55" y="190" width="60" height="28" rx="2" fill="none" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="63" y1="190" x2="63" y2="218" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="71" y1="190" x2="71" y2="218" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="79" y1="190" x2="79" y2="218" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="87" y1="190" x2="87" y2="218" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="95" y1="190" x2="95" y2="218" stroke="#3D3B34" stroke-width="0.8"/>
+  <text x="85" y="232" text-anchor="middle" fill="#3D3B34" font-size="7">no heatsink</text>
+</g>
+
+<!-- MOTOR LEFT -->
+<g transform="translate(590,460)">
+  <rect width="160" height="60" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1"/>
+  <text x="80" y="16" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">MOTOR — LEFT TRACK</text>
+  <text x="80" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">DC Motor + Gearbox</text>
+  <text x="80" y="44" text-anchor="middle" fill="#7A7568" font-size="8">7.2V · NiMH powered</text>
+  <circle cx="20" cy="54" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="20" y="58" text-anchor="middle" fill="#F59E0B" font-size="8">M+</text>
+  <circle cx="50" cy="54" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="50" y="58" text-anchor="middle" fill="#F59E0B" font-size="8">M−</text>
+</g>
+
+<!-- MOTOR RIGHT -->
+<g transform="translate(590,540)">
+  <rect width="160" height="60" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1"/>
+  <text x="80" y="16" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">MOTOR — RIGHT TRACK</text>
+  <text x="80" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">DC Motor + Gearbox</text>
+  <text x="80" y="44" text-anchor="middle" fill="#7A7568" font-size="8">7.2V · NiMH powered</text>
+  <circle cx="20" cy="54" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="20" y="58" text-anchor="middle" fill="#F59E0B" font-size="8">M+</text>
+  <circle cx="50" cy="54" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="50" y="58" text-anchor="middle" fill="#F59E0B" font-size="8">M−</text>
+</g>
+
+<!-- WIRES -->
+<!-- Battery + → L293D 12V -->
+<polyline points="120,142 120,165 560,165 560,333 594,333" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-red)" opacity="0.8"/>
+<!-- Battery − → GND common -->
+<polyline points="155,142 155,175 570,175 570,351 594,351" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)" opacity="0.7"/>
+<!-- L293D 5V → Arduino 5V -->
+<polyline points="594,369 560,369 560,400 283,400 283,352 293,352" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arr)" opacity="0.8"/>
+<!-- L293D GND → Arduino GND -->
+<polyline points="594,351 555,351 555,408 278,408 278,370 293,370" fill="none" stroke="#60a5fa" stroke-width="1.2" marker-end="url(#arr-blue)" opacity="0.6"/>
+
+<!-- HC-05 VCC → Arduino 5V -->
+<polyline points="64,287 50,287 50,420 278,420 278,352 293,352" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.6" stroke-dasharray="3,2"/>
+<!-- HC-05 GND → GND -->
+<polyline points="64,307 45,307 45,428 273,428 273,370 293,370" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.6" stroke-dasharray="3,2"/>
+<!-- HC-05 TX → Arduino D10 -->
+<polyline points="64,327 240,327 240,300 293,300" fill="none" stroke="#22c55e" stroke-width="1.2" marker-end="url(#arr)" opacity="0.8"/>
+<!-- HC-05 RX → Voltage Divider → Arduino D11 -->
+<polyline points="64,347 230,347 230,358 190,358" fill="none" stroke="#fbbf24" stroke-width="1.2" opacity="0.8"/>
+<polyline points="278,358 278,340 293,318" fill="none" stroke="#fbbf24" stroke-width="1.2" marker-end="url(#arr)" opacity="0.8"/>
+
+<!-- Arduino → L293D control wires -->
+<!-- D2 → IN1 -->
+<polyline points="293,192 540,192 540,195 594,195" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- D3 → IN2 -->
+<polyline points="293,210 545,210 545,213 594,213" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- D4 → IN3 -->
+<polyline points="293,228 540,228 540,259 594,259" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- D5 → IN4 -->
+<polyline points="293,246 545,246 545,277 594,277" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- D6 → ENA -->
+<polyline points="293,264 535,264 535,231 594,231" fill="none" stroke="#a78bfa" stroke-width="1.2" opacity="0.8"/>
+<!-- D9 → ENB -->
+<polyline points="293,282 530,282 530,295 594,295" fill="none" stroke="#a78bfa" stroke-width="1.2" opacity="0.8"/>
+
+<!-- L293D OUT → Motors -->
+<polyline points="756,195 780,195 780,480 750,480" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+<polyline points="756,213 785,213 785,486 750,486" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+<polyline points="756,259 790,259 790,558 750,558" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+<polyline points="756,277 795,277 795,564 750,564" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+
+<!-- LEGEND -->
+<g transform="translate(60,470)">
+  <rect width="190" height="110" rx="4" fill="#0F0F0C" stroke="#3D3B34" stroke-width="0.5"/>
+  <text x="95" y="16" text-anchor="middle" fill="#7A7568" font-size="8" letter-spacing="2">LEGEND</text>
+  <line x1="10" y1="28" x2="40" y2="28" stroke="#ef4444" stroke-width="1.5"/><text x="46" y="32" fill="#ef4444" font-size="8">Power +VCC</text>
+  <line x1="10" y1="44" x2="40" y2="44" stroke="#60a5fa" stroke-width="1.5"/><text x="46" y="48" fill="#60a5fa" font-size="8">Ground GND</text>
+  <line x1="10" y1="60" x2="40" y2="60" stroke="#22c55e" stroke-width="1.5"/><text x="46" y="64" fill="#22c55e" font-size="8">Digital signal</text>
+  <line x1="10" y1="76" x2="40" y2="76" stroke="#a78bfa" stroke-width="1.5"/><text x="46" y="80" fill="#a78bfa" font-size="8">PWM signal</text>
+  <line x1="10" y1="92" x2="40" y2="92" stroke="#F59E0B" stroke-width="1.5"/><text x="46" y="96" fill="#F59E0B" font-size="8">Motor output</text>
+</g>
+
+<!-- Notes -->
+<text x="60" y="592" fill="#3D3B34" font-size="8">* 7.2V NiMH → L293D 12V pin · L293D 5V regulator powers Arduino · HC-05 RX needs 1kΩ/2kΩ voltage divider</text>
+<text x="60" y="604" fill="#3D3B34" font-size="8">* SoftwareSerial on D10/D11 keeps D0/D1 free for USB debug · HC-05 default baud 9600 · pair PIN: 1234</text>
+
+<!-- Corner accents -->
+<rect x="60"  y="62"  width="16" height="16" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="824" y="62"  width="16" height="16" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="60"  y="602" width="16" height="16" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="824" y="602" width="16" height="16" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+</svg>
