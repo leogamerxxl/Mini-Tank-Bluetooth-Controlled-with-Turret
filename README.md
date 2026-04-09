@@ -71,4 +71,4 @@ SoftwareSerial on D10/D11 keeps hardware Serial free for USB debug
 Author
 Cosmin Leonardo Cozaciuc
 Electrical Engineering Student — UPB, Bucharest
-leonardoczaciuc@gmail.com
+
